@@ -151,7 +151,7 @@ function displayUI()
     var cUserList = userList ? '#3FFF00' : '#ED1C24';
 	
     $('#plugbot-ui').append(
-        '<p id="plugbot-btn-woot" style="color:' + cWoot + '">auto-woot</p><p id="plugbot-btn-queue" style="color:' + cQueue + '">auto-queue</p><p id="plugbot-btn-hidevideo" style="color:' + cHideVideo + '">hide video</p><p id="plugbot-btn-skipvideo" style="color:#ED1C24">skip video</p><p id="plugbot-btn-userlist" style="color:' + cUserList + '">userlist</p>');
+        '<p id="plugbot-btn-woot" style="color:' + cWoot + '">auto-woot</p><p id="plugbot-btn-queue" style="color:' + cQueue + '">budi na waitlisti</p><p id="plugbot-btn-hidevideo" style="color:' + cHideVideo + '">sakrij video</p><p id="plugbot-btn-skipvideo" style="color:#ED1C24">preskoci video</p><p id="plugbot-btn-userlist" style="color:' + cUserList + '">lista korisnika</p>');
 }
 
 /**
@@ -205,7 +205,7 @@ function initUIListeners()
 	{
         hideVideo = !hideVideo;
         $(this).css('color', hideVideo ? '#3FFF00' : '#ED1C24');
-	$(this).text(hideVideo ? 'hiding video' : 'hide video');
+	$(this).text(hideVideo ? 'Video sakriven' : 'sakrij video');
         $('#yt-frame').animate(
 		{
             'height': (hideVideo ? '0px' : '271px')
@@ -230,7 +230,7 @@ function initUIListeners()
 	{
 		skippingVideo = !skippingVideo;
 		$(this).css('color', skippingVideo ? '#3FFF00' : '#ED1C24');
-		$(this).text(skippingVideo ? 'skipping video' : 'skip video');
+		$(this).text(skippingVideo ? 'Video preskocen' : 'preskoci video');
 		if (hideVideo == skippingVideo)
 			{
 			$('#button-sound').click();
