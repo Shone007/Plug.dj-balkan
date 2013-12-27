@@ -1,4 +1,3 @@
-<span class="text">Dobro dosli na Plug.dj.Verzija 0.9.817
 var baseUrl = "http://i.imgur.com/";
 var wooting = true;
  
