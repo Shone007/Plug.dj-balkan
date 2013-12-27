@@ -294,9 +294,6 @@ function initAPIListeners() {
  
 
 delay();
-$('body').prepend('<style type="text/css" id="plug-css">' + "\n" + styles.join("\n") + "\n" + '</style>');
-$('body').append();
-$('body').append('<script type="text/javascript" id="plug-js-extra">' + "\n" + scripts.join("\n") + "\n" + '</script>');
 if (typeof plugCubed !== 'undefined') plugCubed.close();
 String.prototype.equalsIgnoreCase = function(a) { return typeof a !== 'string' ? false : this.toLowerCase() === a.toLowerCase(); };
 String.prototype.startsWith = function(a) { return typeof a !== 'string' || a.length > this.length ? false : this.indexOf(a) === 0; };
@@ -1884,3 +1881,7 @@ define('plugCubed/Loader',['app/base/Class','plugCubed/Model','app/store/LocalSt
 });
 
 require(['plugCubed/Loader'],function(a) { new a(); });
+
+$('body').prepend('<style type="text/css" id="plug-css">' + "\n" + styles.join("\n") + "\n" + '</style>');
+$('body').append();
+$('body').append('<script type="text/javascript" id="plug-js-extra">' + "\n" + scripts.join("\n") + "\n" + '</script>');
