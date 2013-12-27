@@ -38,6 +38,7 @@ function stopWooting() {
  
 function DJ_ADVANCE_LISTENER(obj) {
         wootSong();
+API.sendChat('/me voli ovu pesmu');
 }
  
 function wootSong() {
@@ -71,7 +72,7 @@ pw = {
 }
  
 if(typeof pw !== "undefined") pw.close();
- API.sendChat('/me voli ovu pesmu');
+
  
 PlugWoot();
  
