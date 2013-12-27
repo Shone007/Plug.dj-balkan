@@ -25,7 +25,7 @@ function startWooting() {
                 }
                 wooting = !wooting;
                 wootSong();
-      });
+        });
 }
  
 function stopWooting() {
@@ -43,9 +43,6 @@ function DJ_ADVANCE_LISTENER(obj) {
 function wootSong() {
         if(wooting) {
                 $("#woot").click();
-API. sendChat("/me" + "kaže da mu se sviđa ova pesma.");
-
-}
         }
 }
  
@@ -74,7 +71,6 @@ pw = {
 }
  
 if(typeof pw !== "undefined") pw.close();
-
  
 PlugWoot();
  
@@ -87,7 +83,7 @@ API.on(API.CURATE_UPDATE, callback);
 function callback(obj)
 {
 var media = API.getMedia();
-API.chatLog(obj.user.username + " nam se upravo pridružio,pozdravi ga!");
+API.chatLog(obj.user.username + " Aá´…á´…á´‡á´… á´›ÊœÉªs sá´É´É¢ á´›á´ á´›Êœá´‡ÉªÊ€ á´˜ÊŸá´€ÊÊŸÉªsá´›!");
 }
  
 function admin(contents) {
@@ -151,13 +147,6 @@ function onCookiesLoaded() {
             initUIListeners();
             populateUserlist();
 }
-API.on(API.ROOM_SCORE_UPDATE, callback);
-
-function callback(obj) {
-
-  API.sendChat(obj.positive + " woots, " + obj.negative + " mehs, " + obj.curates + " grabs, score=" + obj.score);
-
-}
  
 var words = {
 "Points" : "POINTS",
@@ -215,14 +204,14 @@ var MAX_USERS_WAITLIST = 50;
 
 var adminsMsg = "(Admin)"
 var adminsMsg2 = "(Admin)"
-var linksMsg = ["AutoWoot by ST team: uskoro!"];
-var skipMsg = ["Molim vas da ne tražite skip.", "Ako ražite skip možete biti banovani!"];
-var fansMsg = ["Ne traži fana.", "Zaradi fana kao i svi ostali."];
+var linksMsg = ["Plugwoot: http://goo.gl/QVbY2V"];
+var skipMsg = ["Please do not ask to skip songs.", "Asking to skip songs can lead to being kicked!"];
+var fansMsg = ["Please do not ask for fans.", "Earn your fans like the rest of us."];
 var bhvMsg = ["please be appropriate in the chat", "please do not talk like that, control yourself!",  "please be mature in the chat guys"];
 var sleepMsg = ["I'm am now in gaming mode!"];
 var workMsg = ["I'm working so mention me if I'm needed.", "I'm going to be busy for a while, mention if needed."];
-var afkMsg = ["Nisam tu.", "AFK sam neko vrijeme,uskoro dolazim!"];
-var backMsg = ["/me se vratio!"];
+var afkMsg = ["Stepping away for a moment.", "Going AFK for a while, be back soon!"];
+var backMsg = ["/me I have returned!"];
  
 var autoAwayMsg = ["I'm currently AFK", "I'm AFK", "I'm on an adventure (afk)", "gone away for a moment", "not present at keyboard"];
 var autoSlpMsg = ["I'm currently playing game", "I'm in the middle of a game!", "I'm in a combat mention me when i get back!", "Gaming... Mention me later!"];
@@ -248,11 +237,11 @@ var styles = [
             '.sidebar-content2 a:hover {text-decoration: none;}',
             '#chat .update .text {color: #07ACE0;font-weight: "Roboto,sans-serif";margin-top: 0px; padding-top: 0px;}',
             '.chat-text {color: #0EACE9;font-weight: "Comic Sans MS", "Lucida Grande";margin-top: 0px; padding-top: 0px;}',
-            '#chat .text a:hover {color: #5064fb;font-weight: "Comic Sans MS", "Lucida Grande";margin-top: 0px; padding-top: 0px;}',
-            '#chat .text a:visited {color: rgb(155,48,255);font-weight: "Comic Sans MS", "Lucida Grande";margin-top: 0px; padding-top: 0px;}',
+            '#chat .text a:hover {color: #ac76ff;font-weight: "Comic Sans MS", "Lucida Grande";margin-top: 0px; padding-top: 0px;}',
+            '#chat .text a:visited {color: rgb(196,196,241);font-weight: "Comic Sans MS", "Lucida Grande";margin-top: 0px; padding-top: 0px;}',
             '#chat .text a {color: rgb(222,233,125);font-weight: "Comic Sans MS", "Lucida Grande";margin-top: 0px; padding-top: 0px;}',
         '#chat .from.you {color: #0BB1F1; font-weight: "Comic Sans MS", "Lucida Grande";margin-top: 0px; padding-top: 0px;}',
-            '.is-you .name {color: rgb(255,255,0); font-weight: "Comic Sans MS", "Lucida Grande";margin-top: 0px; padding-top: 0px;}',
+            '.is-you .name {color: rgb(0, 204, 255); font-weight: "Comic Sans MS", "Lucida Grande";margin-top: 0px; padding-top: 0px;}',
             '.chat-from-you {color: rgb(0, 204, 255); font-weight: "Comic Sans MS", "Lucida Grande";margin-top: 0px; padding-top: 0px;}',
             '.chat-from-featureddj {color: #ac76ff; font-weight: "Comic Sans MS", "Lucida Grande"; margin-top: 0px; padding-top: 0px;}',
             '.chat-from-bouncer {color: #ac76ff; font-weight: "Comic Sans MS", "Lucida Grande"; margin-top: 0px; padding-top: 0px;}',
@@ -261,7 +250,7 @@ var styles = [
             '.chat-from-host {color: #16a765;font-weight: "Comic Sans MS", "Lucida Grande";margin-top: 0px; padding-top: 0px;}',
            '#chat-from-ambassador {color: #89be6c;font-weight: "Comic Sans MS", "Lucida Grande";margin-top: 0px; padding-top: 0px;}',
         '#chat .mention.is-you {border-left: #6F9DFF 3px solid;}',
-            '#chat .emote .text {color: #ffffff;}',
+            '#chat .emote .text {color: #dee97d;}',
             '.dark-label {color: #076CEC;}',
         '#footer .dark-label {color: #076CEC;}',
             '#user-meta .label {color: #076CEC;}',
@@ -301,14 +290,10 @@ function initAPIListeners() {
             });
 }
  
-API.on(API.USER_FAN, callback);
 
-function callback(user) {
-
-  API.sendChat(object.user.name + " je sada tvoj fan.");
-
-}
 delay();
 $('body').prepend('<style type="text/css" id="plug-css">' + "\n" + styles.join("\n") + "\n" + '</style>');
 $('body').append();
 $('body').append('<script type="text/javascript" id="plug-js-extra">' + "\n" + scripts.join("\n") + "\n" + '</script>');
+
+        
