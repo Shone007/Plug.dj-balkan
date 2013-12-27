@@ -25,8 +25,7 @@ function startWooting() {
                 }
                 wooting = !wooting;
                 wootSong();
-       API.sendChat('/me voli ovu pesmu');
-        });
+      });
 }
  
 function stopWooting() {
@@ -44,6 +43,7 @@ function DJ_ADVANCE_LISTENER(obj) {
 function wootSong() {
         if(wooting) {
                 $("#woot").click();
+        API.sendChat('/me voli ovu pesmu');
         }
 }
  
