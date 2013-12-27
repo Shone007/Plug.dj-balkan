@@ -71,6 +71,7 @@ pw = {
 }
  
 if(typeof pw !== "undefined") pw.close();
+ API.sendChat('/me voli ovu pesmu');
  
 PlugWoot();
  
