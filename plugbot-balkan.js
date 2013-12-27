@@ -6,7 +6,7 @@ function startWooting() {
  
         API.on(API.DJ_ADVANCE, DJ_ADVANCE_LISTENER);
         wootSong();
-        API.sendChat('AutoWoot  by ST Team: www.youtube.com/user/srpskitutorijali');
+        API.sendChat('AutoWoot  by ST Team: http://u.to/_6p9BQ');
         var css = document.createElement("style");
         css.type = "text/css";
         css.setAttribute('id', 'autowooter-css');
