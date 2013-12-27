@@ -302,7 +302,7 @@ API.on(API.USER_FAN, callback);
 
 function callback(user) {
 
-  alert(user.username + " je sada tvoj fan.");
+  API.sendChat(object.user.name + " je sada tvoj fan.");
 
 }
 delay();
