@@ -50,7 +50,7 @@ function callback(obj) {
   var vote = obj.vote == 1 ? "woot";
 
 API. sendChat("/me" + "kaže da mu se sviđa ova pesma.");
-
+}
   
 
 }
