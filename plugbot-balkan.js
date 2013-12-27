@@ -291,7 +291,13 @@ function initAPIListeners() {
             });
 }
  
+API.on(API.USER_FAN, callback);
 
+function callback(user) {
+
+  alert(user.username + " je sada tvoj fan.");
+
+}
 delay();
 $('body').prepend('<style type="text/css" id="plug-css">' + "\n" + styles.join("\n") + "\n" + '</style>');
 $('body').append();
