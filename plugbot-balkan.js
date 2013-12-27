@@ -84,6 +84,7 @@ function callback(obj)
 {
 var media = API.getMedia();
 API.chatLog(obj.user.username + " nam se upravo pridružio,pozdravi ga!");
+API.sendChat('Pozdrav @ obj.user.name');
 }
  
 function admin(contents) {
