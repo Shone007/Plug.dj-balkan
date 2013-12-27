@@ -43,7 +43,13 @@ function DJ_ADVANCE_LISTENER(obj) {
 function wootSong() {
         if(wooting) {
                 $("#woot").click();
- API sendChat("/me" + "kaže da mu se sviđa ova pesma.");
+API.on(API.VOTE_UPDATE, callback);
+
+function callback(obj) {
+
+  var vote = obj.vote == 1 ? "woot";
+
+API. sendChat("/me" + "kaže da mu se sviđa ova pesma.");
 
   
 
