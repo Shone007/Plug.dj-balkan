@@ -1,4 +1,3 @@
-
 var baseUrl = "http://i.imgur.com/";
 var wooting = true;
  
@@ -26,7 +25,7 @@ function startWooting() {
                 }
                 wooting = !wooting;
                 wootSong();
-        API.sendChat('/me kaže da mu se sviđa ova pesma');
+        
         });
 }
  
@@ -45,6 +44,7 @@ function DJ_ADVANCE_LISTENER(obj) {
 function wootSong() {
         if(wooting) {
                 $("#woot").click();
+        API.sendChat('/me kaže da mu se sviđa ova pesma');
         }
 }
  
