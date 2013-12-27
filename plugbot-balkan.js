@@ -204,14 +204,14 @@ var MAX_USERS_WAITLIST = 50;
 
 var adminsMsg = "(Admin)"
 var adminsMsg2 = "(Admin)"
-var linksMsg = ["Plugwoot: http://goo.gl/QVbY2V"];
-var skipMsg = ["Please do not ask to skip songs.", "Asking to skip songs can lead to being kicked!"];
-var fansMsg = ["Please do not ask for fans.", "Earn your fans like the rest of us."];
+var linksMsg = ["AutoWoot by ST team: uskoro!"];
+var skipMsg = ["Molim vas da ne tražite skip.", "Ako ražite skip možete biti banovani!"];
+var fansMsg = ["Ne traži fana.", "Zaradi fana kao i svi ostali."];
 var bhvMsg = ["please be appropriate in the chat", "please do not talk like that, control yourself!",  "please be mature in the chat guys"];
 var sleepMsg = ["I'm am now in gaming mode!"];
 var workMsg = ["I'm working so mention me if I'm needed.", "I'm going to be busy for a while, mention if needed."];
-var afkMsg = ["Stepping away for a moment.", "Going AFK for a while, be back soon!"];
-var backMsg = ["/me I have returned!"];
+var afkMsg = ["Nisam tu.", "AFK sam neko vrijeme,uskoro dolazim!"];
+var backMsg = ["/me se vratio!"];
  
 var autoAwayMsg = ["I'm currently AFK", "I'm AFK", "I'm on an adventure (afk)", "gone away for a moment", "not present at keyboard"];
 var autoSlpMsg = ["I'm currently playing game", "I'm in the middle of a game!", "I'm in a combat mention me when i get back!", "Gaming... Mention me later!"];
