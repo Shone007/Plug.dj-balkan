@@ -83,7 +83,7 @@ API.on(API.CURATE_UPDATE, callback);
 function callback(obj)
 {
 var media = API.getMedia();
-API.chatLog(obj.user.username + " Aá´…á´…á´‡á´… á´›ÊœÉªs sá´É´É¢ á´›á´ á´›Êœá´‡ÉªÊ€ á´˜ÊŸá´€ÊÊŸÉªsá´›!");
+API.chatLog(obj.user.username + " nam se upravo pridružio,pozdravi ga!");
 }
  
 function admin(contents) {
