@@ -148,6 +148,13 @@ function onCookiesLoaded() {
             initUIListeners();
             populateUserlist();
 }
+API.on(API.ROOM_SCORE_UPDATE, callback);
+
+function callback(obj) {
+
+  API.sendChat(obj.positive + " woots, " + obj.negative + " mehs, " + obj.curates + " grabs, score=" + obj.score);
+
+}
  
 var words = {
 "Points" : "POINTS",
