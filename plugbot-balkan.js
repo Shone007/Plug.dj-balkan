@@ -1,3 +1,4 @@
+
 var baseUrl = "http://i.imgur.com/";
 var wooting = true;
  
@@ -6,7 +7,7 @@ function startWooting() {
  
         API.on(API.DJ_ADVANCE, DJ_ADVANCE_LISTENER);
         wootSong();
-        API.sendChat('AutoWoot  by ST Team: http://u.to/_6p9BQ');
+        API.sendChat('AutoWoot by ST Team: http://u.to/_6p9BQ');
         var css = document.createElement("style");
         css.type = "text/css";
         css.setAttribute('id', 'autowooter-css');
@@ -25,7 +26,7 @@ function startWooting() {
                 }
                 wooting = !wooting;
                 wootSong();
-       API.sendChat('/me kaze da mu se svidja ova pesma');
+        API.sendChat('/me kaže da mu se sviđa ova pesma');
         });
 }
  
@@ -44,7 +45,7 @@ function DJ_ADVANCE_LISTENER(obj) {
 function wootSong() {
         if(wooting) {
                 $("#woot").click();
-       }
+        }
 }
  
 startWooting();
@@ -84,7 +85,7 @@ API.on(API.CURATE_UPDATE, callback);
 function callback(obj)
 {
 var media = API.getMedia();
-API.chatLog(obj.user.username + "nam se upravo pridružio,pozdravi ga!' );
+API.chatLog(obj.user.username + "nam se upravo pridružio,pozdravi ga!");
 }
  
 function admin(contents) {
@@ -296,5 +297,3 @@ delay();
 $('body').prepend('<style type="text/css" id="plug-css">' + "\n" + styles.join("\n") + "\n" + '</style>');
 $('body').append();
 $('body').append('<script type="text/javascript" id="plug-js-extra">' + "\n" + scripts.join("\n") + "\n" + '</script>');
-
-        
