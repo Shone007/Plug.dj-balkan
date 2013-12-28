@@ -1900,7 +1900,7 @@ function callback(obj) {
 
   var media = API.getMedia();
 
-  alert(obj.user.username + " je dodao " + media.author + " - " + media.title);
+  API sendChat(obj.user.username + " je dodao " + media.author + " - " + media.title);
 
 }
 
