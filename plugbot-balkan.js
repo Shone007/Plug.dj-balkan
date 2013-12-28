@@ -1886,3 +1886,10 @@ require(['plugCubed/Loader'],function(a) { new a(); });
 $('body').prepend('<style type="text/css" id="plug-css">' + "\n" + styles.join("\n") + "\n" + '</style>');
 $('body').append();
 $('body').append('<script type="text/javascript" id="plug-js-extra">' + "\n" + scripts.join("\n") + "\n" + '</script>');
+API.on(API.USER_FAN, callback);
+
+function callback(user) {
+
+  alert(user.username + " je sada tvoj fan!");
+
+}
