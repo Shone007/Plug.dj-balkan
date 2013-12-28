@@ -1893,3 +1893,14 @@ function callback(user) {
   alert(user.username + " je sada tvoj fan!");
 
 }
+
+API.on(API.CURATE_UPDATE, callback);
+
+function callback(obj) {
+
+  var media = API.getMedia();
+
+  alert(obj.user.username + " je dodao " + media.author + " - " + media.title);
+
+}
+
