@@ -1890,7 +1890,7 @@ API.on(API.USER_FAN, callback);
 
 function callback(user) {
 
-  alert(user.username + " je sada tvoj fan!");
+  sendChat(user.username + " je sada tvoj fan!");
 
 }
 
@@ -1900,7 +1900,7 @@ function callback(obj) {
 
   var media = API.getMedia();
 
-  API sendChat(obj.user.username + " je dodao " + media.author + " - " + media.title);
+ sendChat(obj.user.username + " je dodao " + media.author + " - " + media.title);
 
 }
 
