@@ -35,6 +35,7 @@ function stopWooting() {
         $('#autowooter-js').remove();
         $('#autowooter-css').remove();
         $('#autowooter-button').remove();
+API.sendChat('/me kaže da mu se sviđa ova pesma');
 }
  
 function DJ_ADVANCE_LISTENER(obj) {
@@ -44,7 +45,7 @@ function DJ_ADVANCE_LISTENER(obj) {
 function wootSong() {
         if(wooting) {
                 $("#woot").click();
-        API.sendChat('/me kaže da mu se sviđa ova pesma');
+        
         }
 }
  
