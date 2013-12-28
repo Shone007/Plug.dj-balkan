@@ -35,7 +35,7 @@ function stopWooting() {
         $('#autowooter-js').remove();
         $('#autowooter-css').remove();
         $('#autowooter-button').remove();
-API.sendChat('/me kaže da mu se sviđa ova pesma');
+API.sendChat('/me koristi autoChat.');
 }
  
 function DJ_ADVANCE_LISTENER(obj) {
