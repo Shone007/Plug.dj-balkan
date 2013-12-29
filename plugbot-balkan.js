@@ -553,7 +553,7 @@ if (plugCubed !== undefined) plugCubed.close();
                 if (p3Utils.isPlugCubedVIP(user.id)) title = p3Lang.i18n('info.specialTitles.vip');
 
                 p3Utils.chatLog(undefined, '<table style="width:100%;color:#CC00CC"><tr><td colspan="2"><strong>' + p3Lang.i18n('info.name') + '</strong>: <span style="color:#FFFFFF">' + Utils.cleanTypedString(user.username) + '</span></td></tr>' +
-                    (title ? '<tr><td colspan="2"><strong>' + p3Lang.i18n('Dobro dosao') + '</strong>: <span style="color:#FFFFFF">' + title + '</span></td></tr>' : '') +
+                    (title ? '<tr><td colspan="2"><strong>' + p3Lang.i18n('info.title') + '</strong>: <span style="color:#FFFFFF">' + title + '</span></td></tr>' : '') +
                     '<tr><td colspan="2"><strong>' + p3Lang.i18n('info.id') + '</strong>: <span style="color:#FFFFFF">' + user.id + '</span></td></tr>' +
                     '<tr><td><strong> ' + p3Lang.i18n('info.rank') + '</strong>: <span style="color:#FFFFFF">' + rank + '</span></td><td><strong>' + p3Lang.i18n('info.joined') + '</strong>: <span style="color:#FFFFFF">' + plugCubed.getTimestamp(getUserData(user.id, 'joinTime', Date.now())) + '</span></td></tr>' +
                     '<tr><td><strong>' + p3Lang.i18n('info.status') + '</strong>: <span style="color:#FFFFFF">' + status + '</span></td><td><strong> ' + p3Lang.i18n('info.vote') + '</strong>: <span style="color:#FFFFFF">' + voted + '</span></td></tr>' +
@@ -689,13 +689,7 @@ if (plugCubed !== undefined) plugCubed.close();
                     setUserData(users[i].id, 'joinTime', Date.now());
             }
 
-            $('#chat-header').append(
-                $('<div>').addClass('chat-header-button p3-s-stream').data('key', 'stream').click(this.proxy.onMenuButtonClick).mouseover(function() {
-                    Context.trigger('tooltip:show', p3Lang.i18n('tooltip.stream'), $(this), true);
-                }).mouseout(function() {
-                    Context.trigger('tooltip:hide');
-                })
-            ).append(
+           
                 $('<div>').addClass('chat-header-button p3-s-clear').data('key', 'clear').click(this.proxy.onMenuButtonClick).mouseover(function() {
                     Context.trigger('tooltip:show', p3Lang.i18n('tooltip.clear'), $(this), true);
                 }).mouseout(function() {
