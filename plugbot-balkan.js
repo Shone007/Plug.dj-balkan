@@ -1504,6 +1504,7 @@ if (plugCubed !== undefined) plugCubed.close();
                 if (value == '/brb' || value == '/away')
                     return API.setStatus(1);
                 if (value == '/radim' || value == '/working')
+                   API.sendChat('/me od sada radi,ne ometaj ga!')
                     return API.setStatus(2);
                 if (value == '/igram' || value == '/gaming')
                     return API.setStatus(3);;
@@ -1594,7 +1595,7 @@ if (plugCubed !== undefined) plugCubed.close();
                 }
                 if (API.hasPermission(undefined, API.ROLE.AMBASSADOR) || (p3Utils.isPlugCubedDeveloper() && API.hasPermission(undefined, API.ROLE.MANAGER))) {
                     if (value.indexOf('/koje ') === 0)
-                        return value.toLowerCase() === '/whois all' ? getAllUsers() : getUserInfo(value.substr(7));
+                        return value.toLowerCase() === '/ko je svi' ? getAllUsers() : getUserInfo(value.substr(7));
                     if (value.indexOf('/banall') === 0) {
                         if (value.length > 9) {
                             var me = API.getUser(),
