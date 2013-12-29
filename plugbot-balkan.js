@@ -691,6 +691,12 @@ if (plugCubed !== undefined) plugCubed.close();
 
            
                
+           $('#chat-header').append(
+                $('<div>').addClass('chat-header-button p3-s-stream').data('key', 'stream').click(this.proxy.onMenuButtonClick).mouseover(function() {
+                    Context.trigger('tooltip:show', p3Lang.i18n('tooltip.stream'), $(this), true);
+                }).mouseout(function() {
+                    Context.trigger('tooltip:hide');
+                })
             ).append(
              $('<div>').addClass('chat-header-button p3-s-clear').data('key', 'clear').click(this.proxy.onMenuButtonClick).mouseover(function() {
                     Context.trigger('tooltip:show', p3Lang.i18n('tooltip.clear'), $(this), true);
