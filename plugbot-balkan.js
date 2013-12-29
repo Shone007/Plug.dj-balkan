@@ -521,15 +521,19 @@ if (plugCubed !== undefined) plugCubed.close();
 
                 switch (user.status) {
                     default: status = p3Lang.i18n('status.available');
+                    API.sendChat('/me je sada tu!');
                     break;
                     case API.STATUS.AFK:
                         status = p3Lang.i18n('status.afk');
+                        API.sendChat('/me je sada AFK!');
                         break;
                     case API.STATUS.WORKING:
                         status = p3Lang.i18n('status.working');
+                        API.sendChat('/me sada radi,ne uznemiravaj ga!');
                         break;
                     case API.STATUS.GAMING:
                         status = p3Lang.i18n('status.gaming');
+                        API.sendChat('/me igra,ne uznemiravaj ga!');
                         break;
                 }
 
