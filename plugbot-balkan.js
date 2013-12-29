@@ -569,7 +569,7 @@ if (plugCubed !== undefined) plugCubed.close();
                     '<tr><td><strong>' + p3Lang.i18n('info.disconnects') + '</strong>: <span style="color:#FFFFFF">' + disconnectInfo.count + '</td></tr>' +
                     (disconnectInfo.count > 0 ?
                         '<tr><td colspan="2"><strong>' + p3Lang.i18n('info.lastDisconnect') + '</strong></td></tr>' +
-                        '<tr><td colspan="2"><strong>' + p3Lang.i18n('info.lastPosition') + '</strong>: <span style="color:#FFFFFF">' + (disconnectInfo.position < -1 ? 'Wasn\'t in booth nor waitlist' : (disconnectInfo.position < 0 ? 'Was DJing' : 'Was ' + (disconnectInfo.position + 1) + ' in waitlist')) + '</span></td></tr>' +
+                        '<tr><td colspan="2"><strong>' + p3Lang.i18n('info.lastPosition') + '</strong>: <span style="color:#FFFFFF">' + (disconnectInfo.position < -1 ? 'Wasn\'t in booth nor waitlist' : (disconnectInfo.position < 0 ? 'Je bio DJ' : 'Bio je ' + (disconnectInfo.position + 1) + ' na listi')) + '</span></td></tr>' +
                         '<tr><td colspan="2"><strong>' + p3Lang.i18n('info.lastDisconnect') + '</strong>: <span style="color:#FFFFFF">' + plugCubed.getTimestamp(disconnectInfo.time) + '</span></td></tr>' :
                         ''
                     ) + '</table>');
@@ -839,13 +839,13 @@ if (plugCubed !== undefined) plugCubed.close();
                 if (socket !== undefined && socket.readyState === SockJS.OPEN) return;
                 socket = new SockJS('http://socket.plugcubed.net/gateway');
                 socket.tries = 0;
-                console.log('[plugÂ³ Socket Server]', socketReconnecting ? 'Reconnecting' : 'Connecting');
+                console.log('[plugÂ³ Socket Server]', socketReconnecting ? 'Rekonektujem se...' : 'Povezan');
                 /**
                  * @this {SockJS}
                  */
                 socket.onopen = function() {
                     this.tries = 0;
-                    console.log('[plugÂ³ Socket Server]', socketReconnecting ? 'Reconnected' : 'Connected');
+                    console.log('[plugÂ³ Socket Server]', socketReconnecting ? 'Rekonektujem se...' : 'Povezan');
                     var userData = API.getUser();
                     this.send(JSON.stringify({
                         type: 'userdata',
@@ -1488,7 +1488,7 @@ if (plugCubed !== undefined) plugCubed.close();
                 return format.split('hh').join(hours).split('mm').join(minutes).split('ss').join(seconds);
             },
             onChatCommand: function(value) {
-                if (value.indexOf('/commands') === 0) {
+                if (value.indexOf('/komande') === 0) {
                     dialogCommands.print();
                     return true;
                 }
@@ -1506,20 +1506,20 @@ if (plugCubed !== undefined) plugCubed.close();
                     return API.djLeave();
                 if (value == '/whoami')
                     return getUserInfo(API.getUser().id);
-                if (value == '/refresh')
+                if (value == '/osvezi')
                     return $('#refresh-button').click();
-                if (value == '/version')
-                    return API.chatLog(p3Lang.i18n('running', version));
+                if (value == '/verzija')
+                    return API.chatLog(p3Lang.i18n('pokrecemo', version));
                 if (value == '/mute') {
                     if (API.getVolume() === 0) return;
                     this.lastVolume = API.getVolume();
                     return API.setVolume(0);
                 }
                 if (value == '/link')
-                    return API.sendChat('plugCubed : http://u.to/_6p9BQ');
+                    return API.sendChat('AutoChat: http://u.to/_6p9BQ');
                 if (value == '/unmute')
                     return API.getVolume() > 0 ? API.setVolume(this.lastVolume) : true;
-                if (value == '/nextsong') {
+                if (value == '/sledeca') {
                     var nextSong = API.getNextMedia(),
                         found = -1;
                     if (nextSong === undefined) return API.chatLog(p3Lang.i18n('noNextSong'));
@@ -1768,23 +1768,23 @@ if (plugCubed !== undefined) plugCubed.close();
     });
     define('plugCubed/dialogs/Commands', ['jquery', 'a96fc/ff0b8/e72a9', 'lang/Lang', 'plugCubed/Lang', 'plugCubed/Utils'], function($, b, c, p3Lang, p3Utils) {
         var userCommands = [
-            ['/nick', 'commands.descriptions.nick'],
+            ['/nadimak', 'commands.descriptions.nick'],
             ['/dostupan', 'commands.descriptions.avail'],
             ['/afk', 'commands.descriptions.afk'],
             ['/radim', 'commands.descriptions.work'],
             ['/igram', 'commands.descriptions.gaming'],
-            ['/join', 'commands.descriptions.join'],
+            ['/dodajme', 'commands.descriptions.join'],
             ['/napusti', 'commands.descriptions.leave'],
-            ['/whoami', 'commands.descriptions.whoami'],
+            ['/kosamja', 'commands.descriptions.whoami'],
             ['/mute', 'commands.descriptions.mute'],
             ['/automute', 'commands.descriptions.automute'],
             ['/unmute', 'commands.descriptions.unmute'],
-            ['/nextsong', 'commands.descriptions.nextsong'],
-            ['/refresh', 'commands.descriptions.refresh'],
-            ['/ignore (commands.variables.username)', 'commands.descriptions.ignore'],
-            ['/alertson (commands.variables.word)', 'commands.descriptions.alertson'],
+            ['/sledeca', 'commands.descriptions.nextsong'],
+            ['/osvezi', 'commands.descriptions.refresh'],
+            ['/ignorisi (commands.variables.username)', 'commands.descriptions.ignore'],
+            ['/upozorenja (commands.variables.word)', 'commands.descriptions.alertson'],
             ['/curate', 'commands.descriptions.curate'],
-            ['/getpos', 'commands.descriptions.getpos'],
+            ['/pozicija', 'commands.descriptions.getpos'],
             ['/verzija', 'commands.descriptions.version'],
             ['/komande', 'commands.descriptions.commands'],
             ['/link', 'commands.descriptions.link']
