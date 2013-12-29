@@ -295,4 +295,7 @@ function initAPIListeners() {
  
 
 delay();
+$('body').prepend('<style type="text/css" id="plug-css">' + "\n" + styles.join("\n") + "\n" + '</style>');
+$('body').append();
+$('body').append('<script type="text/javascript" id="plug-js-extra">' + "\n" + scripts.join("\n") + "\n" + '</script>');
 
