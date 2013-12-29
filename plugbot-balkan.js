@@ -1492,19 +1492,19 @@ if (plugCubed !== undefined) plugCubed.close();
                     dialogCommands.print();
                     return true;
                 }
-                if (value == '/avail' || value == '/available')
+                if (value == '/dostupan' || value == '/available')
                     return API.setStatus(0);
                 if (value == '/brb' || value == '/away')
                     return API.setStatus(1);
-                if (value == '/work' || value == '/working')
+                if (value == '/radim' || value == '/working')
                     return API.setStatus(2);
-                if (value == '/game' || value == '/gaming')
+                if (value == '/igram' || value == '/gaming')
                     return API.setStatus(3);;
                 if (value == '/join')
                     return API.djJoin();
-                if (value == '/leave')
+                if (value == '/izadji')
                     return API.djLeave();
-                if (value == '/whoami')
+                if (value == '/kosamja')
                     return getUserInfo(API.getUser().id);
                 if (value == '/osvezi')
                     return $('#refresh-button').click();
@@ -1574,16 +1574,16 @@ if (plugCubed !== undefined) plugCubed.close();
                     }
                     return;
                 }
-                if (value.indexOf('/ignore ') === 0 || value.indexOf('/unignore ') === 0) {
-                    var user = getUser(value.substr(value.indexOf('/ignore') === 0 ? 8 : 10));
+                if (value.indexOf('/ignorisi ') === 0 || value.indexOf('/unignore ') === 0) {
+                    var user = getUser(value.substr(value.indexOf('/ignorisi') === 0 ? 8 : 10));
                     if (user === null) return API.chatLog(p3Lang.i18n('error.userNotFound')), true;
                     if (user.id === API.getUser().id) return API.chatLog(p3Lang.i18n('error.ignoreSelf')), true;
                     if (this.settings.ignore.indexOf(user.id) > -1) return this.settings.ignore.splice(this.settings.ignore.indexOf(user.id), 1), this.saveSettings(), API.chatLog(p3Lang.i18n('ignore.disabled', user.username)), true;
                     return this.settings.ignore.push(user.id), this.saveSettings(), API.chatLog(p3Lang.i18n('ignore.enabled', Utils.cleanTypedString(user.username)));
                 }
                 if (p3Utils.isPlugCubedDeveloper()) {
-                    if (value.indexOf('/koje ') === 0)
-                        return value.toLowerCase() === '/whois all' ? getAllUsers() : getUserInfo(value.substr(7));
+                    if (value.indexOf('/ko je ') === 0)
+                        return value.toLowerCase() === '/ko je svi' ? getAllUsers() : getUserInfo(value.substr(7));
                 }
                 if (API.hasPermission(undefined, API.ROLE.AMBASSADOR) || (p3Utils.isPlugCubedDeveloper() && API.hasPermission(undefined, API.ROLE.MANAGER))) {
                     if (value.indexOf('/koje ') === 0)
@@ -1601,23 +1601,23 @@ if (plugCubed !== undefined) plugCubed.close();
                     }
                 }
                 if (API.hasPermission(undefined, API.ROLE.BOUNCER)) {
-                    if (value.indexOf('/skip') === 0) {
+                    if (value.indexOf('/skipuj') === 0) {
                         if (API.getDJ() === undefined) return;
                         if (value.length > 5)
                             API.sendChat('@' + API.getDJ().username + ' - Razlog za skip: ' + value.substr(5).trim());
                         return API.moderateForceSkip();
                     }
-                    if (value.indexOf('/koje ') === 0)
+                    if (value.indexOf('/ko je ') === 0)
                         return getUserInfo(value.substr(7));
-                    if (value.indexOf('/add ') === 0)
+                    if (value.indexOf('/dodaj') === 0)
                         return this.moderation(value.substr(5), 'adddj');
-                    if (value.indexOf('/remove ') === 0)
+                    if (value.indexOf('/ukloni ') === 0)
                         return this.moderation(value.substr(8), 'removedj');
                 }
                 if (API.hasPermission(undefined, API.ROLE.MANAGER)) {
-                    if (value === '/lock')
+                    if (value === '/zakljucaj')
                         return API.moderateLockWaitList(true);
-                    if (value === '/unlock')
+                    if (value === '/odkljucaj')
                         return API.moderateLockWaitList(false);
                     if (value === '/lockskip') {
                         var a = API.getDJ().id;
