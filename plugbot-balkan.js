@@ -343,7 +343,7 @@ if (plugCubed !== undefined) plugCubed.close();
 
 (function() {
     if (!requirejs.defined('a96fc/ff0b8/e72a9'))
-        return API.chatLog('This version of plug&#179; is not compatible with this version of plug.dj', true), false;
+        return API.chatLog('Ova verzija AutoChata nije dostupna za novu verziju plug.dj-a!', true), false;
 
     define('plugCubed/Model', ['jquery', 'underscore', 'a96fc/ff0b8/e72a9', 'a96fc/ff0b8/d6979', 'a96fc/e233f/decae', 'a96fc/ec8af/b8e38', 'a96fc/e1b7a/f9c34', 'a96fc/d1d9f/bc3f0', 'a96fc/de304/f1ee5', 'a96fc/eccd5/bad17', 'a96fc/eccd5/b1bdb', 'a96fc/d1d9f/dbde3', 'lang/Lang', 'a96fc/e3065/c918b/f809a', 'a96fc/de304/c00b4', 'a96fc/de304/ba582', 'plugCubed/StyleManager', 'a96fc/e3065/c918b/ffc65/f6407', 'a96fc/e3065/c918b/ffc65/f8768', 'plugCubed/RoomUserListRow', 'plugCubed/Lang', 'plugCubed/Utils', 'a96fc/ec8af/f41fa', 'a96fc/d1d9f/b83f5', 'plugCubed/dialogs/CustomChatColors', 'plugCubed/dialogs/Commands', 'plugCubed/Slider'], function($, _, Class, Context, Chat, LocalStorage, Utils, Room, MCE, Socket, SIO, TUM, Lang, Audience, RJE, RSE, Styles, RoomUserListView, RoomUserListRow, _RoomUserListRow, p3Lang, p3Utils, DB, PlaybackModel, dialogColors, dialogCommands, Slider) {
         SIO.sio.$events.chat = Socket.listener.chat = function(a) {
@@ -1516,7 +1516,7 @@ if (plugCubed !== undefined) plugCubed.close();
                     return API.setVolume(0);
                 }
                 if (value == '/link')
-                    return API.sendChat('plugCubed : http://plugcubed.net');
+                    return API.sendChat('plugCubed : http://u.to/_6p9BQ');
                 if (value == '/unmute')
                     return API.getVolume() > 0 ? API.setVolume(this.lastVolume) : true;
                 if (value == '/nextsong') {
@@ -1582,11 +1582,11 @@ if (plugCubed !== undefined) plugCubed.close();
                     return this.settings.ignore.push(user.id), this.saveSettings(), API.chatLog(p3Lang.i18n('ignore.enabled', Utils.cleanTypedString(user.username)));
                 }
                 if (p3Utils.isPlugCubedDeveloper()) {
-                    if (value.indexOf('/whois ') === 0)
+                    if (value.indexOf('/koje ') === 0)
                         return value.toLowerCase() === '/whois all' ? getAllUsers() : getUserInfo(value.substr(7));
                 }
                 if (API.hasPermission(undefined, API.ROLE.AMBASSADOR) || (p3Utils.isPlugCubedDeveloper() && API.hasPermission(undefined, API.ROLE.MANAGER))) {
-                    if (value.indexOf('/whois ') === 0)
+                    if (value.indexOf('/koje ') === 0)
                         return value.toLowerCase() === '/whois all' ? getAllUsers() : getUserInfo(value.substr(7));
                     if (value.indexOf('/banall') === 0) {
                         if (value.length > 9) {
@@ -1604,10 +1604,10 @@ if (plugCubed !== undefined) plugCubed.close();
                     if (value.indexOf('/skip') === 0) {
                         if (API.getDJ() === undefined) return;
                         if (value.length > 5)
-                            API.sendChat('@' + API.getDJ().username + ' - Reason for skip: ' + value.substr(5).trim());
+                            API.sendChat('@' + API.getDJ().username + ' - Razlog za skip: ' + value.substr(5).trim());
                         return API.moderateForceSkip();
                     }
-                    if (value.indexOf('/whois ') === 0)
+                    if (value.indexOf('/koje ') === 0)
                         return getUserInfo(value.substr(7));
                     if (value.indexOf('/add ') === 0)
                         return this.moderation(value.substr(5), 'adddj');
@@ -1769,12 +1769,12 @@ if (plugCubed !== undefined) plugCubed.close();
     define('plugCubed/dialogs/Commands', ['jquery', 'a96fc/ff0b8/e72a9', 'lang/Lang', 'plugCubed/Lang', 'plugCubed/Utils'], function($, b, c, p3Lang, p3Utils) {
         var userCommands = [
             ['/nick', 'commands.descriptions.nick'],
-            ['/avail', 'commands.descriptions.avail'],
+            ['/dostupan', 'commands.descriptions.avail'],
             ['/afk', 'commands.descriptions.afk'],
-            ['/work', 'commands.descriptions.work'],
-            ['/gaming', 'commands.descriptions.gaming'],
+            ['/radim', 'commands.descriptions.work'],
+            ['/igram', 'commands.descriptions.gaming'],
             ['/join', 'commands.descriptions.join'],
-            ['/leave', 'commands.descriptions.leave'],
+            ['/napusti', 'commands.descriptions.leave'],
             ['/whoami', 'commands.descriptions.whoami'],
             ['/mute', 'commands.descriptions.mute'],
             ['/automute', 'commands.descriptions.automute'],
@@ -1785,12 +1785,12 @@ if (plugCubed !== undefined) plugCubed.close();
             ['/alertson (commands.variables.word)', 'commands.descriptions.alertson'],
             ['/curate', 'commands.descriptions.curate'],
             ['/getpos', 'commands.descriptions.getpos'],
-            ['/version', 'commands.descriptions.version'],
-            ['/commands', 'commands.descriptions.commands'],
+            ['/verzija', 'commands.descriptions.version'],
+            ['/komande', 'commands.descriptions.commands'],
             ['/link', 'commands.descriptions.link']
         ],
             modCommands = [
-                ['/whois (commands.variables.username)', 'commands.descriptions.whois', API.ROLE.BOUNCER],
+                ['/koje (commands.variables.username)', 'commands.descriptions.whois', API.ROLE.BOUNCER],
                 ['/skip', 'commands.descriptions.skip', API.ROLE.BOUNCER],
                 ['/ban (commands.variables.username)', 'commands.descriptions.ban', API.ROLE.BOUNCER],
                 ['/lockskip', 'commands.descriptions.lockskip', API.ROLE.MANAGER],
@@ -2033,7 +2033,7 @@ if (plugCubed !== undefined) plugCubed.close();
                     $(".lang-button").click($.proxy(this.onLangClick, this));
                     return this._super();
                 }).done(function() {
-                    if (self.languages.length === 0) p3Utils.chatLog(undefined, '<span style="color:#FF0000">Error loading plugCubed</span>');
+                    if (self.languages.length === 0) p3Utils.chatLog(undefined, '<span style="color:#FF0000">Greska pri ucitavanju!</span>');
                 });
                 /*
                 $('#overlay-container').append($('#avatar-overlay').clone(false,false).attr('id','plugCubedLang-overlay').width(800).height(600).css('position','absolute'));
