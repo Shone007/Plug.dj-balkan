@@ -1506,10 +1506,10 @@ if (plugCubed !== undefined) plugCubed.close();
                     API.sendChat('/me od sada nije tu,dolazim uskoro!')
                     return API.setStatus(1);
                 if (value == '/radim' || value == '/working')
-                   API.sendChat('/me od sada radi,ne ometaj ga!')
+                    API.sendChat('/me od sada radi,ne ometaj ga!')
                     return API.setStatus(2);
                 if (value == '/igram' || value == '/gaming')
-                   API.sendChat('/me od sada igra,ne ometaj ga!')
+                    API.sendChat('/me od sada igra,ne ometaj ga!')
                     return API.setStatus(3);;
                 if (value == '/join')
                     return API.djJoin();
