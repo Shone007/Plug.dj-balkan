@@ -539,9 +539,10 @@ if (plugCubed !== undefined) plugCubed.close();
                         break;
                     default:
                         voted = p3Lang.i18n('vote.undecided');
-                        break;
+                       break;
                     case 1:
                         voted = p3Lang.i18n('vote.woot');
+                         API.sendChat('/me voli ovu pesmu')
                         break;
                 }
                 if (inbooth) voted = p3Lang.i18n('vote.djing');
@@ -552,7 +553,7 @@ if (plugCubed !== undefined) plugCubed.close();
                 if (p3Utils.isPlugCubedVIP(user.id)) title = p3Lang.i18n('info.specialTitles.vip');
 
                 p3Utils.chatLog(undefined, '<table style="width:100%;color:#CC00CC"><tr><td colspan="2"><strong>' + p3Lang.i18n('info.name') + '</strong>: <span style="color:#FFFFFF">' + Utils.cleanTypedString(user.username) + '</span></td></tr>' +
-                    (title ? '<tr><td colspan="2"><strong>' + p3Lang.i18n('info.title') + '</strong>: <span style="color:#FFFFFF">' + title + '</span></td></tr>' : '') +
+                    (title ? '<tr><td colspan="2"><strong>' + p3Lang.i18n('Dobro dosao') + '</strong>: <span style="color:#FFFFFF">' + title + '</span></td></tr>' : '') +
                     '<tr><td colspan="2"><strong>' + p3Lang.i18n('info.id') + '</strong>: <span style="color:#FFFFFF">' + user.id + '</span></td></tr>' +
                     '<tr><td><strong> ' + p3Lang.i18n('info.rank') + '</strong>: <span style="color:#FFFFFF">' + rank + '</span></td><td><strong>' + p3Lang.i18n('info.joined') + '</strong>: <span style="color:#FFFFFF">' + plugCubed.getTimestamp(getUserData(user.id, 'joinTime', Date.now())) + '</span></td></tr>' +
                     '<tr><td><strong>' + p3Lang.i18n('info.status') + '</strong>: <span style="color:#FFFFFF">' + status + '</span></td><td><strong> ' + p3Lang.i18n('info.vote') + '</strong>: <span style="color:#FFFFFF">' + voted + '</span></td></tr>' +
