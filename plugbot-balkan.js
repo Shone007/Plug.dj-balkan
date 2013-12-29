@@ -1509,8 +1509,8 @@ if (plugCubed !== undefined) plugCubed.close();
                     API.sendChat('/me od sada radi!')
                     return API.setStatus(2);
                 if (value == '/igram' || value == '/gaming')
-                    API.sendChat('/me od sada igra!')
-                    return API.setStatus(3);;
+                   API.sendChat('/me od sada igra!') 
+                    return API.setStatus(3);
                 if (value == '/join')
                     return API.djJoin();
                 if (value == '/izadji')
