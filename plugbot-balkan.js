@@ -690,7 +690,9 @@ if (plugCubed !== undefined) plugCubed.close();
             }
 
            
-                $('<div>').addClass('chat-header-button p3-s-clear').data('key', 'clear').click(this.proxy.onMenuButtonClick).mouseover(function() {
+               
+            ).append(
+             $('<div>').addClass('chat-header-button p3-s-clear').data('key', 'clear').click(this.proxy.onMenuButtonClick).mouseover(function() {
                     Context.trigger('tooltip:show', p3Lang.i18n('tooltip.clear'), $(this), true);
                 }).mouseout(function() {
                     Context.trigger('tooltip:hide');
