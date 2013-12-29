@@ -86,7 +86,7 @@ API.on(API.CURATE_UPDATE, callback);
 function callback(obj)
 {
 var media = API.getMedia();
-API.chatLog(obj.user.username + " nam se upravo pridružio,pozdravi ga!");
+API.chatLog(obj.user.username + " je dodao ovu pesmu!");
 }
  
 function admin(contents) {
@@ -204,22 +204,6 @@ var COOKIE_STREAMING = 'streaming';
 var COOKIE_HIDE_VIDEO = 'hidevideo';
 var COOKIE_LEFT = 'left';
 var MAX_USERS_WAITLIST = 50;
-
-var adminsMsg = "(Admin)"
-var adminsMsg2 = "(Admin)"
-var linksMsg = ["Plugwoot: http://goo.gl/QVbY2V"];
-var skipMsg = ["Please do not ask to skip songs.", "Asking to skip songs can lead to being kicked!"];
-var fansMsg = ["Please do not ask for fans.", "Earn your fans like the rest of us."];
-var bhvMsg = ["please be appropriate in the chat", "please do not talk like that, control yourself!",  "please be mature in the chat guys"];
-var sleepMsg = ["I'm am now in gaming mode!"];
-var workMsg = ["I'm working so mention me if I'm needed.", "I'm going to be busy for a while, mention if needed."];
-var afkMsg = ["Stepping away for a moment.", "Going AFK for a while, be back soon!"];
-var backMsg = ["/me I have returned!"];
- 
-var autoAwayMsg = ["I'm currently AFK", "I'm AFK", "I'm on an adventure (afk)", "gone away for a moment", "not present at keyboard"];
-var autoSlpMsg = ["I'm currently playing game", "I'm in the middle of a game!", "I'm in a combat mention me when i get back!", "Gaming... Mention me later!"];
-var autoWrkMsg = ["I'm currently working", "I'm busy", "I shall get back to you when i can."];
- 
 var styles = [
             '.sidebar {position: fixed; top: 0; height: 100%; width: 200px; z-index: 99999; background-image: linear-gradient(bottom, #000000 0%, #3B5678 100%);background-image: -o-linear-gradient(bottom, #000000 0%, #3B5678 100%);background-image: -moz-linear-gradient(bottom, #000000 0%, #3B5678 100%);background-image: -webkit-linear-gradient(bottom, #000000 0%, #3B5678 100%);background-image: -ms-linear-gradient(bottom, #000000 0%, #3B5678 100%);background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #000000),color-stop(1, #3B5678));}',
             '.sidebar#side-right {right: -190px;z-index: 99999;}',
@@ -1559,7 +1543,7 @@ if (plugCubed !== undefined) plugCubed.close();
                     }
                     return this.saveSettings();
                 }
-                if (value.indexOf('/getpos') === 0) {
+                if (value.indexOf('/pozicija') === 0) {
                     var lookup = getUser(value.substr(8)),
                         user = lookup === null ? API.getUser() : lookup,
                         spot = API.getWaitListPosition(user.id);
@@ -1594,7 +1578,7 @@ if (plugCubed !== undefined) plugCubed.close();
                         return value.toLowerCase() === '/ko je svi' ? getAllUsers() : getUserInfo(value.substr(7));
                 }
                 if (API.hasPermission(undefined, API.ROLE.AMBASSADOR) || (p3Utils.isPlugCubedDeveloper() && API.hasPermission(undefined, API.ROLE.MANAGER))) {
-                    if (value.indexOf('/koje ') === 0)
+                    if (value.indexOf('/ko je ') === 0)
                         return value.toLowerCase() === '/ko je svi' ? getAllUsers() : getUserInfo(value.substr(7));
                     if (value.indexOf('/banall') === 0) {
                         if (value.length > 9) {
@@ -1802,10 +1786,10 @@ if (plugCubed !== undefined) plugCubed.close();
                 ['/skip', 'commands.descriptions.skip', API.ROLE.BOUNCER],
                 ['/ban (commands.variables.username)', 'commands.descriptions.ban', API.ROLE.BOUNCER],
                 ['/lockskip', 'commands.descriptions.lockskip', API.ROLE.MANAGER],
-                ['/lock', 'commands.descriptions.lock', API.ROLE.MANAGER],
-                ['/unlock', 'commands.descriptions.unlock', API.ROLE.MANAGER],
-                ['/add (commands.variables.username)', 'commands.descriptions.add', API.ROLE.BOUNCER],
-                ['/remove (commands.variables.username)', 'commands.descriptions.remove', API.ROLE.BOUNCER],
+                ['/zakljucaj', 'commands.descriptions.lock', API.ROLE.MANAGER],
+                ['/odkljucaj', 'commands.descriptions.unlock', API.ROLE.MANAGER],
+                ['/dodaj (commands.variables.username)', 'commands.descriptions.add', API.ROLE.BOUNCER],
+                ['/ukloni (commands.variables.username)', 'commands.descriptions.remove', API.ROLE.BOUNCER],
                 ['/strobe (commands.variables.onoff)', 'commands.descriptions.strobe', API.ROLE.HOST],
                 ['/rave (commands.variables.onoff)', 'commands.descriptions.rave', API.ROLE.HOST],
                 ['/whois all', 'commands.descriptions.whois', API.ROLE.AMBASSADOR],
