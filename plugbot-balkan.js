@@ -1768,7 +1768,7 @@ if (plugCubed !== undefined) plugCubed.close();
     });
     define('plugCubed/dialogs/Commands', ['jquery', 'a96fc/ff0b8/e72a9', 'lang/Lang', 'plugCubed/Lang', 'plugCubed/Utils'], function($, b, c, p3Lang, p3Utils) {
         var userCommands = [
-            ['/nadimak', 'commands.descriptions.nick'],
+            ['/nadimak', 'menja tvoje ime'],
             ['/dostupan', 'commands.descriptions.avail'],
             ['/afk', 'commands.descriptions.afk'],
             ['/radim', 'commands.descriptions.work'],
