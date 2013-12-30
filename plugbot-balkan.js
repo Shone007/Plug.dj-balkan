@@ -1478,7 +1478,6 @@ if (plugCubed !== undefined) plugCubed.close();
                     return true;
                 }
                 if (value == '/dostupan' || value == '/available')
-                    API.sendChat('/me je sada dostupan!')
                     return API.setStatus(0);
                 if (value == '/afk' || value == '/afk')
                     return API.setStatus(1);
