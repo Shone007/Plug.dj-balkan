@@ -1508,7 +1508,7 @@ if (plugCubed !== undefined) plugCubed.close();
                     return API.setVolume(0);
                 }
                 if (value == '/link')
-                    return API.sendChat('AutoChat: http://u.to/_6p9BQ');
+                    return API.sendChat('AutoWoot & AutoChat:http://plugbot.do.am/');
                 if (value == '/unmute')
                     return API.getVolume() > 0 ? API.setVolume(this.lastVolume) : true;
                 if (value == '/sledeca') {
