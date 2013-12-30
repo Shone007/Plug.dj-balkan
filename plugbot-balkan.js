@@ -1488,7 +1488,7 @@ if (plugCubed !== undefined) plugCubed.close();
                     return API.setStatus(3);;
                 if (value == '/join')
                     return API.djJoin();
-                if (value == '/leave')
+                if (value == '/napusti')
                     return API.djLeave();
                 if (value == '/kosamja')
                     return getUserInfo(API.getUser().id);
@@ -1502,7 +1502,7 @@ if (plugCubed !== undefined) plugCubed.close();
                     return API.setVolume(0);
                 }
                 if (value == '/link')
-                    return API.sendChat('plugCubed : http://plugbot.do.am');
+                    return API.sendChat('AutoWoot & AutoChat: http://plugbot.do.am');
                 if (value == '/unmute')
                     return API.getVolume() > 0 ? API.setVolume(this.lastVolume) : true;
                 if (value == '/sledeca') {
@@ -1537,7 +1537,7 @@ if (plugCubed !== undefined) plugCubed.close();
                     }
                     return this.saveSettings();
                 }
-                if (value.indexOf('/getpos') === 0) {
+                if (value.indexOf('/pozicija') === 0) {
                     var lookup = getUser(value.substr(8)),
                         user = lookup === null ? API.getUser() : lookup,
                         spot = API.getWaitListPosition(user.id);
@@ -1551,7 +1551,7 @@ if (plugCubed !== undefined) plugCubed.close();
                         API.chatLog(p3Lang.i18n('info.notInList'));
                     return;
                 }
-                if (value == '/curate') {
+                if (value == '/dodaj') {
                     var a = JSON.parse(LocalStorage.getItem('playlist')),
                         b;
                     for (var b in a) {
@@ -1593,7 +1593,7 @@ if (plugCubed !== undefined) plugCubed.close();
                             API.sendChat('@' + API.getDJ().username + ' - Reason for skip: ' + value.substr(5).trim());
                         return API.moderateForceSkip();
                     }
-                    if (value.indexOf('/whois ') === 0)
+                    if (value.indexOf('/ko je ') === 0)
                         return getUserInfo(value.substr(7));
                     if (value.indexOf('/add ') === 0)
                         return this.moderation(value.substr(5), 'adddj');
@@ -1760,7 +1760,7 @@ if (plugCubed !== undefined) plugCubed.close();
             ['/radim', 'commands.descriptions.work'],
             ['/igram', 'commands.descriptions.gaming'],
             ['/join', 'commands.descriptions.join'],
-            ['/leave', 'commands.descriptions.leave'],
+            ['/napusti', 'commands.descriptions.leave'],
             ['/kosamja', 'commands.descriptions.whoami'],
             ['/mute', 'commands.descriptions.mute'],
             ['/automute', 'commands.descriptions.automute'],
@@ -1769,14 +1769,14 @@ if (plugCubed !== undefined) plugCubed.close();
             ['/osvezi', 'commands.descriptions.refresh'],
             ['/ignore (commands.variables.username)', 'commands.descriptions.ignore'],
             ['/alertson (commands.variables.word)', 'commands.descriptions.alertson'],
-            ['/curate', 'commands.descriptions.curate'],
-            ['/getpos', 'commands.descriptions.getpos'],
+            ['/dodaj', 'commands.descriptions.curate'],
+            ['/pozicija', 'commands.descriptions.getpos'],
             ['/verzija', 'commands.descriptions.version'],
             ['/komande', 'commands.descriptions.commands'],
             ['/link', 'commands.descriptions.link']
         ],
             modCommands = [
-                ['/whois (commands.variables.username)', 'commands.descriptions.whois', API.ROLE.BOUNCER],
+                ['/ko je (commands.variables.username)', 'commands.descriptions.whois', API.ROLE.BOUNCER],
                 ['/skip', 'commands.descriptions.skip', API.ROLE.BOUNCER],
                 ['/ban (commands.variables.username)', 'commands.descriptions.ban', API.ROLE.BOUNCER],
                 ['/lockskip', 'commands.descriptions.lockskip', API.ROLE.MANAGER],
