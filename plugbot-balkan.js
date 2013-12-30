@@ -1480,10 +1480,11 @@ if (plugCubed !== undefined) plugCubed.close();
                 if (value == '/dostupan' || value == '/available')
                     API.sendChat('/me je sada dostupan!')
                     return API.setStatus(0);
-                if (value == '/afk' || value == '/fk')
+                if (value == '/afk' || value == '/afk')
                     return API.setStatus(1);
-                if (value == '/radim' || value == '/radim')
+                    if (value == '/radim' || value == '/radim')
                     return API.setStatus(2);
+                    
                 if (value == '/igram' || value == '/igram')
                     return API.setStatus(3);;
                 if (value == '/join')
