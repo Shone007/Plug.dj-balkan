@@ -1,6 +1,8 @@
 var baseUrl = "http://i.imgur.com/";
 var wooting = true;
  
+css.innerHTML = "background: url("+ baseUrl + "6KE0NZT.png); } .autowooter-icon-off { position: absolute; width: 30px; height: 30px; background: url("+ baseUrl + "b5SXH20.png); }";
+        
 function startWooting() {
         stopWooting();
  
