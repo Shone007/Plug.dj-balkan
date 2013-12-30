@@ -1560,7 +1560,7 @@ if (plugCubed !== undefined) plugCubed.close();
                     }
                     return;
                 }
-                if (value.indexOf('/ignorisi ') === 0 || value.indexOf('/ne ignorisi ') === 0) {
+                if (value.indexOf('/ignorisi ') === 0 || value.indexOf('/neignorisi ') === 0) {
                     var user = getUser(value.substr(value.indexOf('/ignore') === 0 ? 8 : 10));
                     if (user === null) return API.chatLog(p3Lang.i18n('error.userNotFound')), true;
                     if (user.id === API.getUser().id) return API.chatLog(p3Lang.i18n('error.ignoreSelf')), true;
@@ -1590,7 +1590,7 @@ if (plugCubed !== undefined) plugCubed.close();
                     if (value.indexOf('/skipuj') === 0) {
                         if (API.getDJ() === undefined) return;
                         if (value.length > 5)
-                            API.sendChat('@' + API.getDJ().username + ' - Reason for skip: ' + value.substr(5).trim());
+                            API.sendChat('@' + API.getDJ().username + ' - Razlog za skip: ' + value.substr(5).trim());
                         return API.moderateForceSkip();
                     }
                     if (value.indexOf('/ko je ') === 0)
