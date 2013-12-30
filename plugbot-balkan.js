@@ -35,7 +35,7 @@ function stopWooting() {
         $('#autowooter-js').remove();
         $('#autowooter-css').remove();
         $('#autowooter-button').remove();
-API.sendChat('/me koristi autoChat v1.0 !');
+API.sendChat('/me koristi autoChat v1.1 !');
 }
  
 function DJ_ADVANCE_LISTENER(obj) {
