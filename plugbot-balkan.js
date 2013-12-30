@@ -1486,7 +1486,7 @@ if (plugCubed !== undefined) plugCubed.close();
                     
                 if (value == '/igram' || value == '/igram')
                     return API.setStatus(3);;
-                if (value == '/join')
+                if (value == '/DJ')
                     return API.djJoin();
                 if (value == '/napusti')
                     return API.djLeave();
@@ -1495,15 +1495,15 @@ if (plugCubed !== undefined) plugCubed.close();
                 if (value == '/osvezi')
                     return $('#refresh-button').click();
                 if (value == '/verzija')
-                    return API.chatLog(p3Lang.i18n('running', version));
-                if (value == '/mute') {
+                    return API.chatLog(p3Lang.i18n('pokrecemo', version));
+                if (value == '/bez zvuka') {
                     if (API.getVolume() === 0) return;
                     this.lastVolume = API.getVolume();
                     return API.setVolume(0);
                 }
                 if (value == '/link')
                     return API.sendChat('AutoWoot & AutoChat: http://plugbot.do.am');
-                if (value == '/unmute')
+                if (value == '/zvuk')
                     return API.getVolume() > 0 ? API.setVolume(this.lastVolume) : true;
                 if (value == '/sledeca') {
                     var nextSong = API.getNextMedia(),
@@ -1560,7 +1560,7 @@ if (plugCubed !== undefined) plugCubed.close();
                     }
                     return;
                 }
-                if (value.indexOf('/ignore ') === 0 || value.indexOf('/unignore ') === 0) {
+                if (value.indexOf('/ignorisi ') === 0 || value.indexOf('/ne ignorisi ') === 0) {
                     var user = getUser(value.substr(value.indexOf('/ignore') === 0 ? 8 : 10));
                     if (user === null) return API.chatLog(p3Lang.i18n('error.userNotFound')), true;
                     if (user.id === API.getUser().id) return API.chatLog(p3Lang.i18n('error.ignoreSelf')), true;
@@ -1568,12 +1568,12 @@ if (plugCubed !== undefined) plugCubed.close();
                     return this.settings.ignore.push(user.id), this.saveSettings(), API.chatLog(p3Lang.i18n('ignore.enabled', Utils.cleanTypedString(user.username)));
                 }
                 if (p3Utils.isPlugCubedDeveloper()) {
-                    if (value.indexOf('/whois ') === 0)
-                        return value.toLowerCase() === '/whois all' ? getAllUsers() : getUserInfo(value.substr(7));
+                    if (value.indexOf('/ko je ') === 0)
+                        return value.toLowerCase() === '/ko je svi' ? getAllUsers() : getUserInfo(value.substr(7));
                 }
                 if (API.hasPermission(undefined, API.ROLE.AMBASSADOR) || (p3Utils.isPlugCubedDeveloper() && API.hasPermission(undefined, API.ROLE.MANAGER))) {
-                    if (value.indexOf('/whois ') === 0)
-                        return value.toLowerCase() === '/whois all' ? getAllUsers() : getUserInfo(value.substr(7));
+                    if (value.indexOf('/ko je ') === 0)
+                        return value.toLowerCase() === '/ko je svi' ? getAllUsers() : getUserInfo(value.substr(7));
                     if (value.indexOf('/banall') === 0) {
                         if (value.length > 9) {
                             var me = API.getUser(),
@@ -1587,7 +1587,7 @@ if (plugCubed !== undefined) plugCubed.close();
                     }
                 }
                 if (API.hasPermission(undefined, API.ROLE.BOUNCER)) {
-                    if (value.indexOf('/skip') === 0) {
+                    if (value.indexOf('/skipuj') === 0) {
                         if (API.getDJ() === undefined) return;
                         if (value.length > 5)
                             API.sendChat('@' + API.getDJ().username + ' - Reason for skip: ' + value.substr(5).trim());
@@ -1595,15 +1595,15 @@ if (plugCubed !== undefined) plugCubed.close();
                     }
                     if (value.indexOf('/ko je ') === 0)
                         return getUserInfo(value.substr(7));
-                    if (value.indexOf('/add ') === 0)
+                    if (value.indexOf('/dodaj DJ') === 0)
                         return this.moderation(value.substr(5), 'adddj');
-                    if (value.indexOf('/remove ') === 0)
+                    if (value.indexOf('/ukloni DJ ') === 0)
                         return this.moderation(value.substr(8), 'removedj');
                 }
                 if (API.hasPermission(undefined, API.ROLE.MANAGER)) {
-                    if (value === '/lock')
+                    if (value === '/zakljucaj')
                         return API.moderateLockWaitList(true);
-                    if (value === '/unlock')
+                    if (value === '/odkljucaj')
                         return API.moderateLockWaitList(false);
                     if (value === '/lockskip') {
                         var a = API.getDJ().id;
@@ -1759,15 +1759,15 @@ if (plugCubed !== undefined) plugCubed.close();
             ['/afk', 'commands.descriptions.afk'],
             ['/radim', 'commands.descriptions.work'],
             ['/igram', 'commands.descriptions.gaming'],
-            ['/join', 'commands.descriptions.join'],
+            ['/DJ', 'commands.descriptions.join'],
             ['/napusti', 'commands.descriptions.leave'],
             ['/kosamja', 'commands.descriptions.whoami'],
-            ['/mute', 'commands.descriptions.mute'],
+            ['/bez zvuka', 'commands.descriptions.mute'],
             ['/automute', 'commands.descriptions.automute'],
-            ['/unmute', 'commands.descriptions.unmute'],
+            ['/zvuk', 'commands.descriptions.unmute'],
             ['/sledeca', 'commands.descriptions.nextsong'],
             ['/osvezi', 'commands.descriptions.refresh'],
-            ['/ignore (commands.variables.username)', 'commands.descriptions.ignore'],
+            ['/ignorisi (commands.variables.username)', 'commands.descriptions.ignore'],
             ['/alertson (commands.variables.word)', 'commands.descriptions.alertson'],
             ['/dodaj', 'commands.descriptions.curate'],
             ['/pozicija', 'commands.descriptions.getpos'],
@@ -1777,16 +1777,16 @@ if (plugCubed !== undefined) plugCubed.close();
         ],
             modCommands = [
                 ['/ko je (commands.variables.username)', 'commands.descriptions.whois', API.ROLE.BOUNCER],
-                ['/skip', 'commands.descriptions.skip', API.ROLE.BOUNCER],
+                ['/skipuj', 'commands.descriptions.skip', API.ROLE.BOUNCER],
                 ['/ban (commands.variables.username)', 'commands.descriptions.ban', API.ROLE.BOUNCER],
                 ['/lockskip', 'commands.descriptions.lockskip', API.ROLE.MANAGER],
-                ['/lock', 'commands.descriptions.lock', API.ROLE.MANAGER],
-                ['/unlock', 'commands.descriptions.unlock', API.ROLE.MANAGER],
-                ['/add (commands.variables.username)', 'commands.descriptions.add', API.ROLE.BOUNCER],
-                ['/remove (commands.variables.username)', 'commands.descriptions.remove', API.ROLE.BOUNCER],
+                ['/zakljucaj', 'commands.descriptions.lock', API.ROLE.MANAGER],
+                ['/odkljucaj', 'commands.descriptions.unlock', API.ROLE.MANAGER],
+                ['/dodaj DJ (commands.variables.username)', 'commands.descriptions.add', API.ROLE.BOUNCER],
+                ['/ukloni DJ (commands.variables.username)', 'commands.descriptions.remove', API.ROLE.BOUNCER],
                 ['/strobe (commands.variables.onoff)', 'commands.descriptions.strobe', API.ROLE.HOST],
                 ['/rave (commands.variables.onoff)', 'commands.descriptions.rave', API.ROLE.HOST],
-                ['/whois all', 'commands.descriptions.whois', API.ROLE.AMBASSADOR],
+                ['/ko je svi', 'commands.descriptions.whois', API.ROLE.AMBASSADOR],
                 ['/banall', 'commands.descriptions.banall', API.ROLE.AMBASSADOR]
             ],
             a = b.extend({
