@@ -1473,27 +1473,28 @@ if (plugCubed !== undefined) plugCubed.close();
                 return format.split('hh').join(hours).split('mm').join(minutes).split('ss').join(seconds);
             },
             onChatCommand: function(value) {
-                if (value.indexOf('/commands') === 0) {
+                if (value.indexOf('/komande') === 0) {
                     dialogCommands.print();
                     return true;
                 }
-                if (value == '/avail' || value == '/available')
+                if (value == '/dostupan' || value == '/available')
+                    API.sendChat('/me je sada dostupan!')
                     return API.setStatus(0);
-                if (value == '/brb' || value == '/away')
+                if (value == '/afk' || value == '/away')
                     return API.setStatus(1);
-                if (value == '/work' || value == '/working')
+                if (value == '/radim' || value == '/working')
                     return API.setStatus(2);
-                if (value == '/game' || value == '/gaming')
+                if (value == '/igram' || value == '/gaming')
                     return API.setStatus(3);;
                 if (value == '/join')
                     return API.djJoin();
                 if (value == '/leave')
                     return API.djLeave();
-                if (value == '/whoami')
+                if (value == '/kosamja')
                     return getUserInfo(API.getUser().id);
-                if (value == '/refresh')
+                if (value == '/osvezi')
                     return $('#refresh-button').click();
-                if (value == '/version')
+                if (value == '/verzija')
                     return API.chatLog(p3Lang.i18n('running', version));
                 if (value == '/mute') {
                     if (API.getVolume() === 0) return;
@@ -1501,10 +1502,10 @@ if (plugCubed !== undefined) plugCubed.close();
                     return API.setVolume(0);
                 }
                 if (value == '/link')
-                    return API.sendChat('plugCubed : http://plugcubed.net');
+                    return API.sendChat('plugCubed : http://plugbot.do.am');
                 if (value == '/unmute')
                     return API.getVolume() > 0 ? API.setVolume(this.lastVolume) : true;
-                if (value == '/nextsong') {
+                if (value == '/sledeca') {
                     var nextSong = API.getNextMedia(),
                         found = -1;
                     if (nextSong === undefined) return API.chatLog(p3Lang.i18n('noNextSong'));
@@ -1754,24 +1755,24 @@ if (plugCubed !== undefined) plugCubed.close();
     define('plugCubed/dialogs/Commands', ['jquery', 'a96fc/ff0b8/e72a9', 'lang/Lang', 'plugCubed/Lang', 'plugCubed/Utils'], function($, b, c, p3Lang, p3Utils) {
         var userCommands = [
             ['/nick', 'commands.descriptions.nick'],
-            ['/avail', 'commands.descriptions.avail'],
+            ['/dostupan', 'commands.descriptions.avail'],
             ['/afk', 'commands.descriptions.afk'],
-            ['/work', 'commands.descriptions.work'],
-            ['/gaming', 'commands.descriptions.gaming'],
+            ['/radim', 'commands.descriptions.work'],
+            ['/igram', 'commands.descriptions.gaming'],
             ['/join', 'commands.descriptions.join'],
             ['/leave', 'commands.descriptions.leave'],
-            ['/whoami', 'commands.descriptions.whoami'],
+            ['/kosamja', 'commands.descriptions.whoami'],
             ['/mute', 'commands.descriptions.mute'],
             ['/automute', 'commands.descriptions.automute'],
             ['/unmute', 'commands.descriptions.unmute'],
-            ['/nextsong', 'commands.descriptions.nextsong'],
-            ['/refresh', 'commands.descriptions.refresh'],
+            ['/sledeca', 'commands.descriptions.nextsong'],
+            ['/osvezi', 'commands.descriptions.refresh'],
             ['/ignore (commands.variables.username)', 'commands.descriptions.ignore'],
             ['/alertson (commands.variables.word)', 'commands.descriptions.alertson'],
             ['/curate', 'commands.descriptions.curate'],
             ['/getpos', 'commands.descriptions.getpos'],
-            ['/version', 'commands.descriptions.version'],
-            ['/commands', 'commands.descriptions.commands'],
+            ['/verzija', 'commands.descriptions.version'],
+            ['/komande', 'commands.descriptions.commands'],
             ['/link', 'commands.descriptions.link']
         ],
             modCommands = [
