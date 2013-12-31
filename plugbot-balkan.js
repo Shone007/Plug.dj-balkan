@@ -656,7 +656,7 @@ if (plugCubed !== undefined) plugCubed.close();
 
             this.customColorsStyle = $('<style type="text/css" />');
             $('head').append(this.customColorsStyle);
-            p3Utils.chatLog(undefined, p3Lang.i18n('running', version) + '</span><br /><span class="chat-text" style="color:#66FFFF">' + p3Lang.i18n('commandsHelp'), this.colors.infoMessage1);
+            p3Utils.chatLog(undefined, p3Lang.i18n('Pokrecemo v1.1) + '</span><br /><span class="chat-text" style="color:#66FFFF">'+'test 2';
 
             window.addEventListener('pushState', this.proxy.onRoomJoin);
             $('body').prepend('<link rel="stylesheet" type="text/css" id="plugcubed-css" href="http://files.plugcubed.net/plugCubed.css?=' + Date.now() + '" />');
