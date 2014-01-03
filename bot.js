@@ -34,7 +34,6 @@ function stopWooting() {
         $('#autowooter-js').remove();
         $('#autowooter-css').remove();
         $('#autowooter-button').remove();
-API.chatLog('Koristis autoChat v1.0 !');
 }
  
 function DJ_ADVANCE_LISTENER(obj) {
@@ -233,7 +232,7 @@ API.on(API.ROOM_SCORE_UPDATE, callback);
 
 function callback(obj) {
 
-  API.sendChat(obj.positive + " woots, " + obj.negative + " mehs, " + obj.curates + " grabs, score=" + obj.score);
+  API.chatLog(obj.positive + " woots, " + obj.negative + " mehs, " + obj.curates + " grabs, score=" + obj.score);
 
 }
 
