@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name           Hummingbird.me ChatBot
 // @namespace      Uricorn
-// @include        http://plug.dj/shuu-zone/
-// @include        http://plug.dj/hummingbird-me/
+// @include        http://plug.dj/st-morning-party/
+// @include        http://plug.dj/st-morning-party/
 // @Author         Uricorn (Tawi - DJ Neon)
 // @version        0.1
 // @updateURL      http://userscripts.org/scripts/source/179663.user.js
