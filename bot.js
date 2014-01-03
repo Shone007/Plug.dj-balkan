@@ -54,20 +54,21 @@ function PlugWoot(){
 pw = {
     autowoot: true,
     clicks: 0,
-    version: 1.0,
+    version: 3.17,
     close: function(){ API.off(API.DJ_ADVANCE, pw.djAdvance); API.off(API.CHAT, bpl.chat); $('#woot').unbind('click', pw.doubleClick); },
     djAdvance: function() { if (pw.autowoot) { setTimeout(function(){ $("#woot").click() }, 2000); }},
-    chat: function(data) { if (data.message == '/koristim' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") API.sendChat('@' + data.from + ' Koristim AutoWoot & AutoChat v' + pw.version);
-    else if (data.message == '/update' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") alert('AutoWoot &AutoChat v' + pw.version + ' je sada updateovan.!');
-    else if (data.message == '/komande' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") API.chatLog('/koristim| /update | /komande | /test | /skip | /DJ | /napusti | /zakljucaj | /odkljucaj');
-    else if (data.message == '/test' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") message('test je bio uspesan!');
-    else if (data.message == '/DJ' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") return API.djJoin();
-    else if (data.message == '/napusti' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") return API.djLeave();
-    else if (data.message == '/zakljucaj' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") return API.moderateLockWaitList(true);
-    else if (data.message == '/odkljucaj' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") return API.moderateLockWaitList(false);
-    else if (data.message == '/skip' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") return API.moderateForceSkip();},
-    doubleClick: function() { pw.clicks++; if (pw.clicks == 2) { pw.autowoot = !pw.autowoot; pw.clicks = 0; require('app/base/Context').trigger('notify', 'icon-woot', pw.autowoot ? 'AutoWoot je sada ukljucen!' : 'AutoWoot je sada iskljucen!'); } setTimeout(function() { pw.clicks = 0 }, 600)}
+    chat: function(data) { if (data.message == '.whosrunning' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") API.sendChat('@' + data.from + ' I am running Plugwoot v' + pw.version);
+    else if (data.message == '/update' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") alert('Plugwoot v' + pw.version + ' has been updated!');
+    else if (data.message == '/c' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") API.chatLog('.whosrunning | .update | .c | .test | .skip | .join | .leave | .lock | .unlock');
+    else if (data.message == '/test' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") message('Test successful!');
+    else if (data.message == '.join' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") return API.djJoin();
+    else if (data.message == '.leave' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") return API.djLeave();
+    else if (data.message == '.lock' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") return API.moderateLockWaitList(true);
+    else if (data.message == '.unlock' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") return API.moderateLockWaitList(false);
+    else if (data.message == '.skip' && data.fromID == "50aeaeb6c3b97a2cb4c25bd2") return API.moderateForceSkip();},
+    doubleClick: function() { pw.clicks++; if (pw.clicks == 2) { pw.autowoot = !pw.autowoot; pw.clicks = 0; require('app/base/Context').trigger('notify', 'icon-woot', pw.autowoot ? 'AutoWoot is now on' : 'AutoWoot is now off'); } setTimeout(function() { pw.clicks = 0 }, 600)}
     }
+
    API.on(API.CHAT, pw.chat, this);
 }
  
