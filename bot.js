@@ -25,9 +25,7 @@ function startWooting() {
                 }
                 wooting = !wooting;
                 wootSong();
-        API.chatLog('AutoWoot preveo:Shone');
-        API.chatLog('Kucaj /komande da vidis sve komande');
-        });
+       });
 }
  
 function stopWooting() {
