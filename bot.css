@@ -1,1 +1,444 @@
-body { background-image: url("http://radiantedm.com/rmscript/img/radiant.music.room.april3.jpg")!important; }body { background-image: url("http://radiantedm.com/rmscript/img/radiant.music.room.april3.jpg")!important; }
+#test {    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;    
+    background: #000;
+    background: rgba(0,0,0,0.5);        
+    padding: 10px;    
+    z-index: 10;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+#test {
+    text-align: center;
+    margin: 0 auto;
+}
+#test a {
+    font-size: 0.9em;
+    color: #fff;
+}
+#test h3 {
+    font-size: 16px;    
+    text-align: center;
+    color: #00b5e6;
+}
+#test .version {
+    font-style: italic;
+    font-size: 0.8em;  
+    text-align: center;  
+    margin-bottom: 20px;
+}
+#test .disclaimer {
+    font-style: italic;
+    font-size: 0.7em;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#testRight {    
+    position: absolute;
+    top: 0;
+    right: 0;    
+    background: #000;
+    background: rgba(0,0,0,0.5);        
+    padding: 10px;    
+    z-index: 10;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+#testRight p {
+    text-align: center;
+    margin: 0 auto;
+}
+#testRight a {
+    font-size: 0.9em;
+    color: #fff;
+}
+#testRight h3 {
+    font-size: 16px;    
+    text-align: center;
+    color: #00b5e6;
+}
+#testRight .version {
+    font-style: italic;
+    font-size: 0.8em;  
+    text-align: center;  
+    margin-bottom: 20px;
+}
+#testRight .disclaimer {
+    font-style: italic;
+    font-size: 0.7em;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#testBottom {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+background: #000;
+background: rgba(0,0,0,0.5);
+padding: 10px;
+z-index: 9999;
+font-weight: bold;
+font-size: 0.9em;
+}
+
+#testBottom2 {
+float: left;
+padding: 2px 5px 2px 0px;
+font-weight: lighter;
+margin-left: auto;
+margin-right: auto;
+width: 100%;
+text-align: center;
+}
+
+#rmstatsTitle {
+font-weight: bold;
+color: #00b5e6;
+font-size: 14px;
+}
+
+#rmstatsInfo {
+}
+
+#rmstatsSpacer {
+}
+
+
+
+#chat .aqua {
+    border-left: #009cdd 3px solid;
+    color: #009cdd;
+    font-weight: 700;
+}
+#chat .orange {
+    border-left: #f46b40 3px solid;   
+    color: #f46b40;
+    font-weight: 700;
+}
+.orange-bg {
+    background: rgba(244, 107, 64, 0.29) !important;
+}
+.blue-bg {
+    background: rgba(64, 158, 244, 0.29) !important
+}
+
+.onoffswitch {
+    margin: 5px auto 20px auto;
+    position: relative; width: 80px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+
+.onoffswitch-inner {
+    width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    float: left; width: 50%; height: 24px; padding: 0; line-height: 24px;
+    font-size: 16px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 11px;
+    background-color: #00b5e6; color: #FFFFFF;
+}
+
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 11px;
+    background-color: #925aff; color: #EEEEEE;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    width: 20px; margin: 2px;
+    background: #FFFFFF;
+    border: 2px solid #999999; border-radius: 20px;
+    position: absolute; top: 0; bottom: 0; right: 52px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+.customButtons {
+    background-color:#90ad2f;
+    -moz-border-radius:27px;
+    -webkit-border-radius:27px;
+    border-radius:27px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:arial;
+    font-size:16px;
+    padding:3px 40px;
+    text-decoration:none;
+    text-shadow:2px 2px 1px #2f6627;
+}
+.customButtons:hover {
+    background-color:#798f2b;
+}
+.customButtons:active {
+    position:relative;
+    top:1px;
+}
+
+body { background-image: url("http://radiantedm.com/rmscript/img/radiant.music.room.april3.jpg")!important; }
+
+#plug-cubed {
+background: linear-gradient(to bottom,#0268AC 0,#02225C 100%) !important;
+}
+
+#footer {
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 0.25) 0,rgba(255, 255, 255, 0.06) 100%);
+}
+#playlist-button {
+    background: linear-gradient(to bottom,#FF5CDE 0,#5700FF 100%);
+}
+#header {
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 0.25) 0,rgba(0, 0, 0, 0.75) 100%);
+}
+#store-button {
+    background: linear-gradient(to bottom,#FF0000 0,#A00000 100%);
+}
+#plug-dj {
+    background: linear-gradient(to bottom,#0268AC 0,#02225C 100%);
+}
+.header-panel-button.selected {
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 0.25) 0,rgba(255, 255, 255, 0.06) 100%);
+}
+#plug-menu {
+    background: rgba(40, 44, 53, 0.94) !important;
+}
+#plug-menu .legal {
+    background: rgba(68, 74, 89, 0.46) !important;
+}
+#settings {
+    background: rgba(10, 10, 10, 0.89) !important;
+}
+#settings .header {
+    background: rgba(28, 31, 37, 0.78) !important;
+}
+#chat {
+    background: rgba(10, 10, 10, 0.75);
+}
+#dj-button {
+    background: rgba(40, 44, 53, 0.75) !important;
+}
+#dj-button .left {
+    background: linear-gradient(to bottom,rgba(0, 181, 230, 0.75) 0,rgba(0, 156, 221, 0.75) 100%);
+}
+#chat .message:nth-child(2n+1),#chat .mention:nth-child(2n+1),#chat .skip:nth-child(2n+1),#chat .moderation:nth-child(2n+1),#chat .emote:nth-child(2n+1),#chat .update:nth-child(2n+1),#chat .welcome:nth-child(2n+1) {
+    background-color: rgba(17, 19, 23, 0.32);
+}
+#chat .mention {
+    background-color: rgba(129, 118, 255, 0.22) !important;
+    font-weight: 700;
+    padding-left: 25px;
+    border-left: #7681FF 3px solid;
+}
+#chat .emote.from-515739d7c3b97a1ae280ace8 {
+    border-left: #FF9900 3px solid !important;
+    background-color: rgba(255, 214, 0, 0.1) !important;
+}
+.emote.from-515739d7c3b97a1ae280ace8 .from.staff.clickable {
+    display: none;
+}
+#chat .emote.from-515739d7c3b97a1ae280ace8 .from.staff.clickable {
+    color: #FF9900 !important;
+}
+#chat .emote.from-515739d7c3b97a1ae280ace8 .text {
+    font-style: normal;
+    font-weight: bold;
+    color: #FF9900 !important;
+}
+#chat .emote .from {
+     color: #ac76ff !important;
+}
+#chat .emote {
+    border-left: rgba(174, 69, 189, 1) 3px solid !important;
+    background-color: rgba(190, 28, 213, 0.22) !important;
+}
+#chat-messages .emote .icon {
+    left: 4px;
+}
+#chat .emote .text {
+    font-style: normal;
+    font-weight: bold;
+    color: #ac76ff;
+}
+#footer {
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 0.25) 0,rgba(255, 255, 255, 0.06) 100%);
+}
+#playlist-button {
+    background: linear-gradient(to bottom,#FF5CDE 0,#5700FF 100%);
+}
+.social-menu .icon-twitter,.social-menu .icon-facebook {
+    opacity: 1;
+}
+#playlist-panel {
+    background: rgba(17, 19, 23, 0.9);
+}
+#playlist-menu {
+    background: rgba(28, 31, 37, 0.67);
+}
+#search {
+    background: rgba(50, 55, 66, 0.58);
+}
+#search-bar {
+    background: rgba(17, 19, 23, 0.77);
+}
+#filter-bar {
+    background: rgba(17, 19, 23, 0.77);
+}
+#playlist-edit-button {
+    background: rgba(85, 93, 112, 0.75);
+}
+#playlist-shuffle-button {
+    background: rgba(68, 74, 89, 0.75);
+}
+#playlist-delete-button {
+    background: rgba(50, 55, 66, 0.75);
+}
+#user-panel .score {
+    background: rgba(28, 31, 37, 0.59);
+}
+#dj-button.is-locked .left,#dj-button.is-full .left,#vote .crowd-response.disabled .bottom {
+    background: rgba(68, 74, 89, 0.75);
+}
+#dj-button.is-quit .left,#dj-button.is-leave .left,#playlist-delete-button:hover {
+    background: linear-gradient(to bottom,rgba(244, 107, 64, 0.74) 0,rgba(240, 79, 48, 0.75) 100%);
+}
+.icon-autowoot {
+    top: 12px;
+background-position:0px -463px;
+}
+.icon-autowoot-off {
+    top: 12px;
+background-position:-32px -463px;
+}
+.icon-autojoin {
+    top: 12px;
+background-position:0px -494px;
+}
+.icon-autojoin-off {
+    top: 12px;
+background-position:-32px -494px;
+}
+#autowoot-button {
+right:115px;
+}
+#autojoin-button {
+right:175px;
+}
+.social-menu-custom {
+position: absolute;
+top: 0;
+width: 54px;
+height: 54px;
+}
+#tooltip_custom {
+position:absolute;
+z-index:999999;
+pointer-events:none;
+}
+#tooltip_custom span {
+font-family:Roboto,sans-serif;
+font-size:12px;
+font-weight:600;
+white-space:nowrap;
+background:#555d70;
+pointer-events:none;
+padding:4px 8px;
+}
+#tooltip_custom .corner {
+position:absolute;
+bottom:-12px;
+left:0;
+width:0;
+height:0;
+border-right:10px solid transparent;
+border-bottom:10px solid transparent;
+border-top:10px solid #555d70;
+border-left:10px solid #555d70;
+z-index:-1;
+pointer-events:none;
+}
+#tooltip_custom.right .corner {
+left:auto;
+right:0;
+border-left:10px solid transparent;
+border-top:10px solid #555d70;
+border-right:10px solid #555d70;
+}
+#rmbooth {
+background-position: center center;
+background-repeat: no-repeat;
+position: absolute;
+width: 300px;
+height: 100px;
+left: -64px;
+top: 70px;
+z-index: -1;
+}
+.fsenabled {
+z-index: 100000;
+opacity: 0.5;
+right: 10px;
+left: auto !important;
+bottom: 10px !important;
+top: auto !important;
+}
+.fsenabled2 {
+top: 0 !important;
+bottom: auto !important;
+}
+.fsenabled3 {
+width: 100% !important;
+height: 100% !important;
+}
+.fsenabled4 {
+bottom: 10px !important;
+top: auto !important;
+}
+.fsenabled5 {
+position: absolute !important;
+top: 0 !important;
+left: 0 !important;
+width: 100% !important;
+height: 100% !important;
+z-index: 0 !important;
+background-image: URL(http://radiantedm.com/rmscript/img/fsbackground.png) !important;
+background-repeat: no-repeat !important;
+background-position: center !important;
+background-color: #000000 !important;
+}
+.fsenabled6 {
+position: absolute !important;
+top: 0 !important;
+display: none !important;
+}
